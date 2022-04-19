@@ -31,9 +31,6 @@ spark = SparkSession \
     .appName("PySpark App") \
     .getOrCreate()
 
-sc = pyspark.SparkContext.getOrCreate()
-sqlContext = SQLContext(sc)
-
 
 url = "https://footballapi.pulselive.com/football/teams/12/compseasons/418/staff?pageSize=30&compSeasons=418&altIds=true&page=0&type=player"
 
