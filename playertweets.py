@@ -9,6 +9,7 @@ import pyspark
 import findspark
 findspark.init()
 import re
+import config
 
 os.environ["PYSPARK_PYTHON"] = sys.executable
 os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
@@ -48,7 +49,7 @@ def export_parquet_table(df,file_name):
 
 tweets_dict = {}
 
-for player in players[:2]:
+for player in players:
     query = str(player) + " -is:retweet"
     tweets = client.search_recent_tweets(query=query)
     
